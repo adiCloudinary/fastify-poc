@@ -12,8 +12,7 @@ export const baseSwaggerOasRoot = {
     consumes: ['application/json'],
     produces: ['application/json'],
     tags: [
-      { name: 'General', description: 'General endpoints' },
-      { name: 'Users', description: 'User related end-points' },
+      { name: 'General', description: 'General endpoints' }
     ]
   },
   hideUntagged: true,

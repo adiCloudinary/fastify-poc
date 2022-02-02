@@ -1,9 +1,16 @@
 import { createServer } from "../lib/server/server";
 import { createUsersRouter } from "./routers/users/user-routers";
+import { createCustomAction } from "./routers/custom-actions/custom-action-routes";
+import { baseSwaggerOasRoot } from "../lib/server/swagger-oas-root";
 
+baseSwaggerOasRoot.openapi.tags.concat([
+  { name: 'Users', description: 'User related end-points' },
+  { name: 'Custom Actions', description: 'Custom Action endpoints'}
+]);
 const server = createServer();
 
 server.register(createUsersRouter);
+server.register(createCustomAction);
 
 const start = async () => {
   try {
