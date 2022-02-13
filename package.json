@@ -14,9 +14,10 @@
     "@types/node": "17.0.8",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
+    "dotenv": "16.0.0",
     "node-dev": "7.1.0"
   },
   "scripts": {
-    "start": "node-dev src/main.ts"
+    "start": "node-dev -r dotenv/config src/main.ts dotenv_config_path=.env.local"
   }
 }
